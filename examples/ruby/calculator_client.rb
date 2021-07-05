@@ -6,10 +6,10 @@ require 'grpc'
 require 'calculator_services_pb'
 
 def main
-  n1 = ARGV.size > 0 ?  ARGV[0].to_i : 1
-  operator = ARGV.size > 1 ?  ARGV[1] : '+'
-  n2 = ARGV.size > 2 ?  ARGV[2].to_i : 1
-  hostname = ARGV.size > 3 ?  ARGV[3] : 'localhost:50051'
+  n1 = ARGV.size > 0 ? ARGV[0].to_i : 1
+  operator = ARGV.size > 1 ? ARGV[1] : '+'
+  n2 = ARGV.size > 2 ? ARGV[2].to_i : 1
+  hostname = ARGV.size > 3 ? ARGV[3] : 'localhost:50051'
 
   stub = Calculator::Calculator::Stub.new(hostname, :this_channel_is_insecure)
   begin
